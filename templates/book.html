@@ -1,0 +1,17 @@
+{% extends "home.html" %}
+{% block body %}
+
+<form method="POST" action="" class="form">
+  <h5>Choose a date:</h5>
+  {{ form.slot_date(class="form-control form-control-sm border border-primary mb-4 border-opacity-50 w-25") }}
+  <h5>Choose a time: </h5>
+  {{ form.slot_time(class="form-control form-control-sm border border-primary mb-4 border-opacity-50 w-25") }}
+  {{ form.submit_booking(class="btn btn-danger") }}
+  {{ form.confirm_booking(class="btn btn-danger") }}
+
+
+</form>
+
+
+
+{% endblock body %}

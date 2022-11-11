@@ -1,0 +1,42 @@
+{% extends "home.html" %}
+{% block body %}
+
+<div class="container">
+    <form method="POST" action="" class="form">
+
+         <div class="w-50">
+                 <div class="form group px-5 p-3 ">
+                     <h1 style="font-family:verdana; color:black;font-size:18px">
+                    {{ form.username1.label(class_="form-control-label mb-1") }}
+                     </h1>
+                    {{ form.username1(class="form-control form-control-sm border border-primary mb-4 border-opacity-50 w-75") }}
+                 </div>
+
+                <div class="form group px-5">
+                    <h5 style="font-family:verdana; color:black;font-size:18px">
+                        {{ form.password1.label(class="form-control-label mb-1") }}
+                    </h5>
+                    {{ form.password1(class="form-control form-control-sm border border-primary mb-4 border-opacity-50 w-75") }}
+                </div>
+
+                <div class="form group px-5">
+                    <h5 style="font-family:verdana; color:black;font-size:18px">
+                        {{ form.confirmpwd.label(class="form-control-label mb-1") }}
+                    </h5>
+                    {{ form.confirmpwd(class="form-control form-control-sm border border-primary mb-4 border-opacity-50 w-75") }}
+                </div>
+
+                <div class="form-group px-5 p-3">
+                    {{ form.submit_signup1(class="btn btn-danger") }}
+                </div>
+                 <div class="form-group px-5 p-3">
+                    Already have an account? {{ form.submit_login1(class="btn btn-danger") }}
+                </div>
+         </div>
+
+     </form>
+
+</div>
+
+
+{% endblock body %}
