@@ -1,0 +1,71 @@
+/* to create user table */
+
+
+USE [futsal]
+GO
+
+/****** Object:  Table [dbo].[tbluser]    Script Date: 11/11/2022 09:47:23 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[tbluser1](
+	[username] [varchar](30) NOT NULL,
+	[password] [varchar](30) NULL,
+	[created_time] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[username] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+/* to create booking table */
+
+USE [futsal]
+GO
+
+/****** Object:  Table [dbo].[tblbooking]    Script Date: 11/11/2022 09:55:54 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[tblbooking](
+	[username] [varchar](30) NULL,
+	[slot_date] [varchar](20) NULL,
+	[slot_time] [varchar](20) NULL,
+	[price] [int] NULL,
+	[available] [varchar](10) NULL
+) ON [PRIMARY]
+GO
+
+
+/* Create stored procedure to insert new users */
+
+USE [futsal]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_login]    Script Date: 11/11/2022 09:57:32 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[sp_login]
+@username  varchar(30),
+@password varchar(30)
+
+AS
+
+Insert into tbluser(username, password, created_time) 
+values
+(@username, @password, GETDATE())
+GO
+
+
