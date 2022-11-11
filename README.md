@@ -57,6 +57,14 @@ source bin/activate
 * Copy paste the url http://127.0.0.1:5000/home in your browser.
 
 
+## Database
+
+* Microsoft SQL Server Management Studio 18
+
+* Create a new database named "futsal"
+
+* Run "futsal_script" file in SSMS for required tables and stored procedures to be created.
+
 ## Signup
 
 Enter your valid email address and choose a password to create an account. Once successfully signed up, a sign in email will be sent to you.
